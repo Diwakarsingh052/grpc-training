@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package proto;
+
+
+//The go_package option should contain the full import path of the Go package
+//which contains the generated code for the .proto file
+option go_package = "proto-basics/proto";
+
+
+//Payload for the request
+message BlogRequest {
+  int64 blog_id = 1;   //  lower_snake_case,
+  string title = 2;
+  string content = 3;
+}
