@@ -14,3 +14,13 @@ message BlogRequest {
   string title = 2;
   string content = 3;
 }
+
+//nested message
+message Result {
+  string url = 1;
+  string title = 2;
+}
+
+message SearchResponse {
+  Result results = 1;
+}

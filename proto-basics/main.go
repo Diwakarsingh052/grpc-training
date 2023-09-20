@@ -11,6 +11,8 @@ func main() {
 		Title:   "Introduction to Protocol Buffers",
 		Content: "Test",
 	}
-	fmt.Println(r)
+
+	// to get data from the struct, we could use get methods defined in proto package
 	fmt.Println(r.GetBlogId())
+	fmt.Println(r.String())
 }
