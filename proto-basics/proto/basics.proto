@@ -17,10 +17,12 @@ message BlogRequest {
 
 //nested message
 message Result {
-  string url = 1;
+  reserved 1;
+//  string url = 1;
   string title = 2;
+
 }
 
 message SearchResponse {
-  Result results = 1;
+  repeated Result results = 1;
 }
