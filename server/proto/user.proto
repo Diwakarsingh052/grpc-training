@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package proto;
+
+//path to folder which contains the generated code for the .proto file
+option go_package = "server/gen/proto";
+
+//buf mod init // to generate module using buf
+
+message User {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+  repeated string roles = 4;
+}
+
+message SignupRequest {
+  User user = 1;
+}
+
+message SignupResponse {
+  string result = 1;
+}
+
+service UserService {
+//  unary
+  rpc Signup(SignupRequest) returns (SignupResponse) ;
+}
