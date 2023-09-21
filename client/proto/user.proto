@@ -5,10 +5,11 @@ package proto;
 //path to folder which contains the generated code for the .proto file
 option go_package = "client/gen/proto";
 
-//buf mod init // to generate module using buf
 
+//buf mod init // to generate module using buf
+//unary
 message User {
-  string name = 1;
+  string name = 1; // dataType fieldName = fieldNumber
   string email = 2;
   string password = 3;
   repeated string roles = 4;
@@ -21,8 +22,41 @@ message SignupRequest {
 message SignupResponse {
   string result = 1;
 }
+//end of unary proto
+
+
+//proto for server streaming
+message GetPostRequest {
+  fixed64 user_id = 1;
+}
+message Post {
+  string title = 1;
+  string author = 2;
+  string body = 3;
+}
+
+message GetPostResponse {
+  repeated Post posts = 1; // each chunk would have multiple posts , we need to use repeated to represent multiple
+  // post in each chunk
+}
+
+//end server streaming
+
+//client streaming
+message CreatePostRequest {
+  repeated Post posts = 1;
+}
+message CreatePostResponse {
+  string result = 1;
+}
+//end client streaming
 
 service UserService {
-//  unary
+  //  unary
   rpc Signup(SignupRequest) returns (SignupResponse) ;
+  //server streaming // stream keywords indicate that series of responses would be sent back.
+  rpc GetPosts(GetPostRequest) returns (stream GetPostResponse);
+
+  //client streaming
+  rpc CreatePost(stream CreatePostRequest) returns (CreatePostResponse);
 }
