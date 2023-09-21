@@ -1,0 +1,39 @@
+[9:00 AM] Diwakar (Guest)
+
+Learning Go
+
+Book by Jon Bodner
+
+
+
+https://lets-go-further.alexedwards.net/
+
+
+
+
+
+https://www.youtube.com/watch?v=rx6CPDK_5mU&list=PLy_6D98if3ULEtXtNSY_2qN21VCKgoQAE&pp=iAQB
+
+
+
+https://www.youtube.com/watch?v=opVobybT_1w&list=PL7yAAGMOat_EX1nv8fgltlm0CnJTH8Nwg
+
+
+
+https://quii.gitbook.io/learn-go-with-tests/
+
+
+
+https://go.dev/blog/pprof
+
+
+
+https://go.dev/doc/gc-guide
+
+
+
+https://go.dev/blog/pgo
+
+
+
+https://google.github.io/styleguide/go/index

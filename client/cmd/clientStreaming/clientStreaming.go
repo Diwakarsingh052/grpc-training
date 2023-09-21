@@ -55,7 +55,7 @@ func main() {
 	}
 
 	req := &pb.CreatePostRequest{Posts: batch1}
-	
+
 	//sending the request to the server
 	err = stream.Send(req)
 	if err != nil {
